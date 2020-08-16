@@ -1,0 +1,16 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+
+{% block content %}
+<h5>Please , place your order here !!!</h5>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{formset.management_form}}
+    {% for form in formset%}
+    {{form.as_p}}
+    <br>
+    {% endfor %}
+    <input type="submit" name="submit">
+</form>
+{% endblock content %}
